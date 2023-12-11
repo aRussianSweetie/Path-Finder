@@ -47,7 +47,7 @@ def create_graph():
     G = nx.Graph()
 
     # Create a list of nodes
-    nodes = list(range(10))
+    nodes = list(range(100))
 
     # Randomly shuffle the nodes
     random.shuffle(nodes)

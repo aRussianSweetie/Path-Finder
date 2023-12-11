@@ -19,20 +19,22 @@ class MyApp(QWidget):
         grid = QGridLayout()
         self.setLayout(grid)
 
-        self.btn = QPushButton('Find shortest path', self)
+        self.btn = QPushButton('FIND', self)  # Change the button text to "FIND"
         self.btn.clicked.connect(self.showDialog)
+        self.btn.setFixedHeight(30)  # Set the button height to 20 pixels
         grid.addWidget(self.btn, 0, 0)
 
         self.label = QLabel(self)
-        grid.addWidget(self.label, 1, 0)
+        self.label.setFixedHeight(30)  # Set the label height to 20 pixels
+        grid.addWidget(self.label, 0, 1)
 
         self.figure = plt.figure(figsize=(5, 5))
         self.canvas = FigureCanvas(self.figure)
-        grid.addWidget(self.canvas, 0, 1, 2, 1)
+        grid.addWidget(self.canvas, 1, 0, 1, 2)
 
         self.setWindowTitle('Shortest Path Finder')
         self.setGeometry(300, 300, 700, 300)
-        self.show()
+        self.showMaximized()  # Show the window maximized
 
         # Draw the graph once
         self.draw_graph()
